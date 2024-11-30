@@ -1,11 +1,50 @@
 @import "~normalize.css";
 @import "@blueprintjs/core/lib/css/blueprint.css";
 @import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+::-webkit-scrollbar {
+  display: none;
+}
 
-body {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.custom-table {
+  background-color: #ebedf7;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.custom-table thead {
+  background-color: #b5a33f;
+  color: white;
+}
+
+.custom-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.custom-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-table td {
+  padding: 12px 15px;
+}
+
+.edit-body {
+  background-color: #6573c3;
+  color: #fff;
 }
