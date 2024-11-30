@@ -51,19 +51,24 @@ function App() {
       username: newData.username,
     };
 
-    setData((prevData) => [newUser, ...prevData]);
+    setTimeout(() => {
+      setData((prevData) => [
+        { ...newUser, animationClass: "fade-in" },
+        ...prevData,
+      ]);
 
-    const successToast = AppToster.show({
-      message: "Data Added Successfully!",
-    });
+      const successToast = AppToster.show({
+        message: "Data Added Successfully!",
+      });
 
-    setTimeout(() => AppToster.clear(successToast), 1500);
+      setTimeout(() => AppToster.clear(successToast), 1500);
 
-    setNewData({
-      firstName: "",
-      lastName: "",
-      username: "",
-    });
+      setNewData({
+        firstName: "",
+        lastName: "",
+        username: "",
+      });
+    }, 500);
   };
 
   const onDelete = (id) => {
@@ -152,7 +157,7 @@ function App() {
           </thead>
           <tbody>
             {data.map((user, index) => (
-              <tr key={user.id}>
+              <tr key={user.id} className={user.animationClass || ""}>
                 <td>{index + 1}</td>
                 <td>{user.firstName}</td>
                 <td>{user.lastName}</td>
